@@ -1,0 +1,41 @@
+<html>
+<head>
+  <title>VOCÊ TÁ FUDIDO!!!</title>
+  <HTA:APPLICATION
+    APPLICATIONNAME="Caos"
+    BORDER="none"
+    CAPTION="no"
+    SHOWINTASKBAR="no"
+    SINGLEINSTANCE="no"
+    WINDOWSTATE="normal">
+  <script language="VBScript">
+    Dim x, y, dx, dy
+    Randomize
+    x = Int((Screen.Width - 300) * Rnd)
+    y = Int((Screen.Height - 100) * Rnd)
+    dx = 5
+    dy = 5
+
+    Sub Window_OnLoad()
+      window.resizeTo 300,100
+      MoveWindow
+    End Sub
+
+    Sub MoveWindow()
+      SetInterval "DeslizarJanela", 10
+    End Sub
+
+    Sub DeslizarJanela()
+      x = x + dx
+      y = y + dy
+      If x < 0 Or x > (Screen.Width - 300) Then dx = -dx
+      If y < 0 Or y > (Screen.Height - 100) Then dy = -dy
+      window.moveTo x, y
+    End Sub
+  </script>
+</head>
+<body style="background-color:black; color:red; font-size:20px; text-align:center;">
+  <h2>VOCÊ TÁ FERRADO!!!</h2>
+  <p>SEU PC ESTÁ SENDO BRUTALMENTE DANIFICADO</p>
+</body>
+</html>
